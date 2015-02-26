@@ -1,0 +1,6 @@
+###SUM OF PRIMES 
+
+######CHALLENGE DESCRIPTION:
+Write a program which determines the sum of the first 1000 prime numbers.
+
+[Problem total description link](https://www.codeeval.com/open_challenges/4/) 
