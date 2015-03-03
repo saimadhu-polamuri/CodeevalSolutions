@@ -21,10 +21,12 @@ class UniqueElements():
 		""" Extracts input sequence from a given line """
 
 		self.line = line.replace("\n", "")
-		return (list(set(self.line)))
-		# list_value = self.line.split(',')
-		# set_values = list(set([int(i) for i in list_value]))
+		#return (list(set(self.line)))
+		list_value = self.line.split(',')
+		set_values = list(set([int(i) for i in list_value]))
+		return (",".join('%d' % x for x in set_values))
 		#return (",".join(str(x) for x in set_values))
+		#return set_values
 
 	def read_file(self):
 
