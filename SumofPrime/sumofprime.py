@@ -4,6 +4,8 @@ __autor__ = 'Saimadhu Polamuri'
 __website__ = 'www.dataaspirant.com'
 __createdon__ = '25-Feb-2015'
 
+from math import sqrt
+
 class SumOfPrime():
 
 	""" Solution for codeeval sumofprime problem """
@@ -14,19 +16,11 @@ class SumOfPrime():
 
 		self.number = number
 
-	def prime_check(self, num):
-
-		""" Checks prime number validity for an given number """
+	def is_prime(self,num):
 
 		self.num = num
-		remider_list = []
-		for i in xrange(2,self.num):
-			remider_list.append(self.num%i)
-		# print remider_list.count(0)
-		if remider_list.count(0) == 0:
-			return True
-		else:
-			return False
+		result = all(self.num % i for i in xrange(2, self.num))
+		return result
 
 	def prime_sum_generator(self):
 
@@ -37,7 +31,7 @@ class SumOfPrime():
 		i = 2
 		while(prime_count < self.number):
 
-			if self.prime_check(i) :
+			if self.is_prime(i) :
 				prime_list.append(i)
 				prime_count += 1
 				i += 1
@@ -49,8 +43,8 @@ class SumOfPrime():
 def main():
 
 	""" Main function to create SumOfPrime instance """
-	number = 1000
-	primesum = SumOfPrime(number)
+
+	primesum = SumOfPrime(1000)
 	print primesum.prime_sum_generator()
 if __name__ == "__main__":
 	main()
